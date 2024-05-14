@@ -1,0 +1,28 @@
+<head>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    {% if session %}
+    <h1>Hello {{ session.name }}!</h1>
+    <a href="/logout">
+        Logout
+    </a>
+    {% else %}
+    <h1>Hello, World!</h1>
+    Please Login
+    <a href="/login">
+        Login
+    </a>
+    
+    <div id="g_id_onload" data-client_id="608616676890-pvfn5v3ggqpjrm3ld8os5noieq0q25i0.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost:8000/authorize"
+        data-itp_support="true">
+    </div>
+
+    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with"
+        data-size="large" data-logo_alignment="left">
+    </div>
+    {% endif %}
+
+</body>
